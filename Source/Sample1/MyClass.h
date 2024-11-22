@@ -14,15 +14,15 @@ public:
 class CMyFactory
 {
 public:
-	CMyResource* FindOrAddResource(const std::string& pathOfResource)
+	CMyResource* FindOrAddResource(const std::string& path)
 	{
-		auto ret = m_mapNameToResource.insert({ pathOfResource, NULL });
+		auto ret = m_mapPathToResource.insert({ path, NULL });
 		if (ret.second)
-			ret.first->second = std::make_shared<CMyResource>(pathOfResource);
+			ret.first->second = std::make_shared<CMyResource>(path);
 		return ret.first->second.get();
 	}
 
-	std::map<std::string, std::shared_ptr<CMyResource> > m_mapNameToResource;
+	std::map<std::string, std::shared_ptr<CMyResource> > m_mapPathToResource;
 };
 
 extern CMyFactory g_factory;
