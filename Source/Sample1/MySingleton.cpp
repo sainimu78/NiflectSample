@@ -2,7 +2,7 @@
 
 void CMyClass::InitForTest()
 {
-	m_singleton_0 = g_factory.FindOrAddSingleton("/Dir/Asset.bin");
+	m_singleton_0 = g_factory.FindOrAddSingleton("/Dir/Image.bmp");
 }
 
 CMySingleton* CMyFactory::FindOrAddSingleton(const std::string& pathOfSingleton)
