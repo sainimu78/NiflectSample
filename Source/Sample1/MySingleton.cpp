@@ -9,8 +9,8 @@ CMySingleton* CMyFactory::FindOrAddSingleton(const std::string& pathOfSingleton)
 {
 	auto ret = m_mapNameToSingleton.insert({ pathOfSingleton, NULL });
 	if (ret.second)
-		ret.first->second = Niflect::MakeShared<CMySingleton>(pathOfSingleton);
-	return ret.first->second.Get();
+		ret.first->second = std::make_shared<CMySingleton>(pathOfSingleton);
+	return ret.first->second.get();
 }
 
 CMyFactory g_factory;

@@ -37,7 +37,7 @@ class CMyFactory
 public:
 	CMySingleton* FindOrAddSingleton(const std::string& pathOfSingleton);
 
-	std::map<std::string, Niflect::TSharedPtr<CMySingleton> > m_mapNameToSingleton;
+	std::map<std::string, std::shared_ptr<CMySingleton> > m_mapNameToSingleton;
 };
 
 extern CMyFactory g_factory;
