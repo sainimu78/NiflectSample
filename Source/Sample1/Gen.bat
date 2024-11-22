@@ -1,6 +1,6 @@
 @..\..\ThirdParty\NiflectGenTool\bin\NiflectGenTool.exe ^
 -n Sample1 ^
--h MySingleton.h ^
+-h MyClass.h ^
 -a Sample1AccessorSetting.h ^
 -I ../../ThirdParty/Niflect/include ^
 -I ./ ^

@@ -1,4 +1,4 @@
-#include "MySingleton.h"
+#include "MyClass.h"
 #include "Sample1_private.h"
 #include "Niflect/NiflectTable.h"
 #include "Niflect/Serialization/JsonFormat.h"

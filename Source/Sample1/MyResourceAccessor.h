@@ -3,7 +3,7 @@
 
 using namespace RwTree;
 
-class CMySingletonAccessor : public Niflect::CAccessor
+class CMyResourceAccessor : public Niflect::CAccessor
 {
 protected:
 	virtual bool SaveInstanceImpl(const AddrType base, CRwNode* rw) const;
