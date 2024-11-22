@@ -1,7 +1,6 @@
 #pragma once
 #include "Niflect/CommonlyUsed/DefaultAccessorSetting.h"
 #include "MyResourceAccessor.h"
-#include "MyClass.h"
 
 namespace DefaultAccessorSetting
 {

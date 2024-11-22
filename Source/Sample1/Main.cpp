@@ -3,6 +3,8 @@
 #include "Niflect/NiflectTable.h"
 #include "Niflect/Serialization/JsonFormat.h"
 
+CMyFactory g_factory;
+
 int main()
 {
 	using namespace Niflect;
