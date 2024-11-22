@@ -1,5 +1,5 @@
-#include "MyClass.h"
-#include "MyApp/ModuleReg/MyApp_private.h"
+#include "MySingleton.h"
+#include "Sample1_private.h"
 #include "Niflect/NiflectTable.h"
 #include "Niflect/Serialization/JsonFormat.h"
 
@@ -17,26 +17,28 @@ int main()
 	CRwNode rw;
 
 	{
-		CMyClass srcData;
+		using TestType = CMyClass;
+
+		TestType srcData;
 		srcData.InitForTest();
-		
+
 		{
 			// Save the 'srcData' instance to the 'rw' node
-			auto type = StaticGetType<CMyClass>();
+			auto type = StaticGetType<TestType>();
 			type->SaveInstanceToRwNode(&srcData, &rw);
 		}
 
 		TSharedPtr<void*> dummy;
 		{
-			auto type = StaticGetType<CMyClass>();
+			auto type = StaticGetType<TestType>();
 			// Create CMyClass dummy instance from reflected type info.
 			dummy = type->MakeSharedInstance<void*>();
 			// Load the dummy instance from the 'rw' node
 			type->LoadInstanceFromRwNode(dummy.Get(), &rw);
 		}
-		
+
 		// Copy the loaded dummy instance to 'dstData'
-		CMyClass dstData = *reinterpret_cast<CMyClass*>(dummy.Get());
+		TestType dstData = *reinterpret_cast<TestType*>(dummy.Get());
 		// Assert that the saving and laoding were successful
 		ASSERT(srcData == dstData);
 	}
